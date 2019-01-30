@@ -1,0 +1,13 @@
+# ~/.lldbinit
+
+# Aliases
+command alias es expression -l swift --
+command alias eo expression -l objc --
+command alias poc expression -l objc -O --
+command alias flush expression -l objc -- (void)[CATransaction flush]
+command alias 🚽 expression -l objc -- (void)[CATransaction flush]
+
+# Imports
+# command script import ~/.lldb-extensions/nudge/nudge.py
+# command script import ~/.lldb-extensions/jump.py
+# command script import /usr/local/opt/chisel/libexec/fblldb.py
