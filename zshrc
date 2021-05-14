@@ -15,6 +15,7 @@ export NPM_BIN="/usr/local/share/npm/bin"
 export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
 export PATH="/usr/local/bin:${PATH}"
+export PATH="/opt/homebrew/bin:${PATH}"
 export PATH="${PATH}:${HOME}/bin"
 export PATH="${PATH}:${NPM_BIN}"
 export PATH="${PATH}:${GOPATH}"
