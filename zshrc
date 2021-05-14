@@ -69,7 +69,8 @@ eval "$(rbenv init -)"
 # test -f "${HOME}/.config/exercism/exercism_completion.bash" && . $_
 
 # Powerline
-if [ -f `which powerline-daemon` ]; then
+which powerline-daemon > /dev/null 2>&1
+if [ $? -eq 0 ]; then
    powerline-daemon -q
    POWERLINE_BASH_CONTINUATION=1
    POWERLINE_BASH_SELECT=1
