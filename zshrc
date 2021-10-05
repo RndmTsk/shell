@@ -38,6 +38,8 @@ alias jsonfmt='python3 -mjson.tool'
 alias pip='pip3'
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | tr -d '\n'"
 alias uuidc="uuid | pbcopy"
+alias bpixc="bundle exec pod install && xc $@ || bundle exec pod install --repo-update && xc $@"
+alias pixc="pod install && xc $@ || pod install --repo-update && xc $@"
 
 # ZSH Bindkeys
 bindkey -e
