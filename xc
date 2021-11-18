@@ -2,10 +2,11 @@
 OLD_IFS=${IFS}
 IFS=$'\n'
 RESPONSE=${1}
+PACKAGE_FILES=$(find . -name "Package.swift")
 WORKSPACES=$(find . -name "*.xcworkspace" | grep -v 'project.xcworkspace' | grep -v 'package.xcworkspace')
 PROJECT_FILES=$(find . -name "*.xcodeproj")
 
-POSSIBLE_FILES=(${WORKSPACES} ${PROJECT_FILES})
+POSSIBLE_FILES=(${PACKAGE_FILES} ${WORKSPACES} ${PROJECT_FILES})
 NUM_FILES=${#POSSIBLE_FILES[@]}
 if [ ${NUM_FILES} -eq 1 ]; then
   IFS=${OLD_IFS}
