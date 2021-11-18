@@ -188,18 +188,18 @@ echo '╚═╝└─┘─┴┘└─┘  ═╩╝┴┴└─└─┘└─
 echo ''
 
 check_local_dir "${HOME}/bin"
-check_local_dir "${HOME}/Code"
-check_local_dir "${HOME}/Code/Apple Platforms"
-check_local_dir "${HOME}/Code/Apple Platforms/macOS"
-check_local_dir "${HOME}/Code/Apple Platforms/macOS/Experiments"
-check_local_dir "${HOME}/Code/Apple Platforms/macOS/Articles"
-check_local_dir "${HOME}/Code/Apple Platforms/iOS"
-check_local_dir "${HOME}/Code/Apple Platforms/iOS/Experiments"
-check_local_dir "${HOME}/Code/Apple Platforms/iOS/Articles"
-check_local_dir "${HOME}/Code/go"
-check_local_dir "${HOME}/Code/go/src"
-check_local_dir "${HOME}/Code/Web"
-check_local_dir "${HOME}/Code/Docker"
+check_local_dir "${HOME}/Developer"
+check_local_dir "${HOME}/Developer/Apple Platforms"
+check_local_dir "${HOME}/Developer/Apple Platforms/macOS"
+check_local_dir "${HOME}/Developer/Apple Platforms/macOS/Experiments"
+check_local_dir "${HOME}/Developer/Apple Platforms/macOS/Articles"
+check_local_dir "${HOME}/Developer/Apple Platforms/iOS"
+check_local_dir "${HOME}/Developer/Apple Platforms/iOS/Experiments"
+check_local_dir "${HOME}/Developer/Apple Platforms/iOS/Articles"
+check_local_dir "${HOME}/Developer/go"
+check_local_dir "${HOME}/Developer/go/src"
+check_local_dir "${HOME}/Developer/Web"
+check_local_dir "${HOME}/Developer/Docker"
 
 echo ''
 echo ''
@@ -380,7 +380,7 @@ echo ''
 
 which git > /dev/null 2>&1
 if [ $? -eq 0 ]; then
-    check_for_git_font 'Fira Code' "${HOME}/Code/FiraCode" 'https://github.com/tonsky/FiraCode.git'
+    check_for_git_font 'Fira Code' "${HOME}/Developer/FiraCode" 'https://github.com/tonsky/FiraCode.git'
 else
     echo "    ${MISSING} Git unavailable, skipping 'FiraCode'"
 fi
