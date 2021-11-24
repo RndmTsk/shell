@@ -1,3 +1,12 @@
+# Functions
+function video_to_gif() {
+  # http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
+  PALETTE="/tmp/palette.png"
+  FILTERS="fps=15,scale=320:-1:flags=lanczos"
+  ffmpeg -v warning -i ${1} -vf "${FILTERS},palettegen=stats_mode=diff" -y ${PALETTE} && \
+  ffmpeg -v warning -i ${1} -i ${PALETTE} -lavfi "${FILTERS} [x]; [x][1:v] paletteuse" -y ${2:-output.gif}
+}
+
 # Shell Configuration
 export EDITOR=vim
 export POWERLINE_BASH_CONTINUATION=1
@@ -40,6 +49,7 @@ alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | tr -d '\n'"
 alias uuidc="uuid | pbcopy"
 alias bpixc="bundle exec pod install && xc $@ || bundle exec pod install --repo-update && xc $@"
 alias pixc="pod install && xc $@ || pod install --repo-update && xc $@"
+alias mov2gif="video_to_gif $@"
 
 # ZSH Bindkeys
 bindkey -e
