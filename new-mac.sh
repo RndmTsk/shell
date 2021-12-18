@@ -189,13 +189,13 @@ echo ''
 
 check_local_dir "${HOME}/bin"
 check_local_dir "${HOME}/Developer"
-check_local_dir "${HOME}/Developer/Apple Platforms"
-check_local_dir "${HOME}/Developer/Apple Platforms/macOS"
-check_local_dir "${HOME}/Developer/Apple Platforms/macOS/Experiments"
-check_local_dir "${HOME}/Developer/Apple Platforms/macOS/Articles"
-check_local_dir "${HOME}/Developer/Apple Platforms/iOS"
-check_local_dir "${HOME}/Developer/Apple Platforms/iOS/Experiments"
-check_local_dir "${HOME}/Developer/Apple Platforms/iOS/Articles"
+check_local_dir "${HOME}/Developer/Apple"
+check_local_dir "${HOME}/Developer/Apple/macOS"
+check_local_dir "${HOME}/Developer/Apple/macOS/Experiments"
+check_local_dir "${HOME}/Developer/Apple/macOS/Articles"
+check_local_dir "${HOME}/Developer/Apple/iOS"
+check_local_dir "${HOME}/Developer/Apple/iOS/Experiments"
+check_local_dir "${HOME}/Developer/Apple/iOS/Articles"
 check_local_dir "${HOME}/Developer/go"
 check_local_dir "${HOME}/Developer/go/src"
 check_local_dir "${HOME}/Developer/Web"
@@ -215,8 +215,7 @@ check_for_app 'Xcode' '/Applications/Xcode.app' 'https://apps.apple.com/us/app/x
 check_for_app 'Slack' '/Applications/Slack.app' 'https://apps.apple.com/us/app/slack-for-desktop/id803453959'
 check_for_app 'Dynamo' '/Applications/Dynamo.app' 'https://apps.apple.com/us/app/dynamo/id1445910651'
 check_for_app 'Flow' '/Applications/Flow.app' 'https://apps.apple.com/us/app/flow-focus-pomodoro-timer/id1423210932'
-# Purchased on my personal account
-# check_for_app 'Magnet' '/Applications/Magnet.app' 'https://apps.apple.com/us/app/magnet/id441258766'
+check_for_app 'Magnet' '/Applications/Magnet.app' 'https://apps.apple.com/us/app/magnet/id441258766'
 check_for_app 'Meeting Bar' '/Applications/MeetingBar.app' 'https://apps.apple.com/us/app/meetingbar/id1532419400?mt=12'
 echo ''
 echo ''
@@ -231,10 +230,10 @@ echo ''
 check_for_app 'VS Code' '/Applications/Visual Studio Code.app' 'https://code.visualstudio.com'
 check_for_app 'Sublime Text' '/Applications/Sublime Text.app' 'https://www.sublimetext.com'
 check_for_app 'Sublime Merge' '/Applications/Sublime Merge.app' 'https://www.sublimemerge.com'
-check_for_app 'Charles Proxy' '/Applications/Charles.app' 'https://www.charlesproxy.com/download'
+# check_for_app 'Charles Proxy' '/Applications/Charles.app' 'https://www.charlesproxy.com/download'
 check_for_app 'Discord' '/Applications/Discord.app' 'https://discord.com/api/download?platform=osx'
 check_for_app 'SF Symbols' '/Applications/SF Symbols.app' 'https://developer.apple.com/sf-symbols'
-check_for_app 'Postman' '/Applications/Postman.app' 'https://www.postman.com/downloads/'
+# check_for_app 'Postman' '/Applications/Postman.app' 'https://www.postman.com/downloads/'
 echo ''
 echo ''
 
