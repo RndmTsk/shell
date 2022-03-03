@@ -296,6 +296,7 @@ which brew > /dev/null 2>&1
 if [ $? -eq 0 ]; then
   check_local_install 'OpenSSL' 'which openssl' 'brew install openssl'
   check_local_install 'Git' 'which git' 'brew install git'
+  check_local_install 'GitHub' 'which gh' 'brew install gh'
   check_local_install 'Python 3' 'which python3' 'brew install python3'
   check_local_install 'rlwrap' 'which rlwrap' 'brew install rlwrap'
   check_local_install 'Powerlevel 10k' 'which p10k' 'brew install romkatv/powerlevel10k/powerlevel10k'
