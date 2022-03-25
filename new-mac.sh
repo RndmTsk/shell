@@ -213,7 +213,6 @@ echo ''
 
 check_for_app 'Xcode' '/Applications/Xcode.app' 'https://apps.apple.com/us/app/xcode/id497799835'
 check_for_app 'Slack' '/Applications/Slack.app' 'https://apps.apple.com/us/app/slack-for-desktop/id803453959'
-check_for_app 'Dynamo' '/Applications/Dynamo.app' 'https://apps.apple.com/us/app/dynamo/id1445910651'
 check_for_app 'Flow' '/Applications/Flow.app' 'https://apps.apple.com/us/app/flow-focus-pomodoro-timer/id1423210932'
 check_for_app 'Magnet' '/Applications/Magnet.app' 'https://apps.apple.com/us/app/magnet/id441258766'
 check_for_app 'Meeting Bar' '/Applications/MeetingBar.app' 'https://apps.apple.com/us/app/meetingbar/id1532419400?mt=12'
