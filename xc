@@ -2,9 +2,9 @@
 OLD_IFS=${IFS}
 IFS=$'\n'
 RESPONSE=${1}
-PACKAGE_FILES=$(find . -name "Package.swift")
-WORKSPACES=$(find . -name "*.xcworkspace" | grep -v 'project.xcworkspace' | grep -v 'package.xcworkspace')
-PROJECT_FILES=$(find . -name "*.xcodeproj")
+PACKAGE_FILES=$(find . -name "Package.swift" | grep -ve ".*/\.build/.*")
+WORKSPACES=$(find . -name "*.xcworkspace" | grep -v 'project.xcworkspace' | grep -v 'package.xcworkspace' | grep -ve ".*/\.build/.*")
+PROJECT_FILES=$(find . -name "*.xcodeproj" | grep -ve ".*/\.build/.*")
 
 POSSIBLE_FILES=(${WORKSPACES} ${PACKAGE_FILES} ${PROJECT_FILES})
 NUM_FILES=${#POSSIBLE_FILES[@]}
@@ -38,5 +38,6 @@ case "${RESPONSE}" in
     echo "No such file."
   fi
   ;;
+esac
 
 IFS=${OLD_IFS}
