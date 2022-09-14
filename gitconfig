@@ -1,6 +1,3 @@
-❯ vi ~/.gitconfig
-
-
 [credential]
         helper = osxkeychain
 
@@ -32,9 +29,10 @@
 [alias]
         aliases = "!f() { git config --global -l | grep alias | sort; }; f"
         prune-remote = "!f() { git remote prune origin; }; f"
-        prune-local = "!f() { git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d; }; f"
+        prune-local = "!f() { \"${HOME}/bin/clear-local-branches.sh\"; }; f"
         fresh = "!f() { git checkout ${1:-main} && git pull && git prune-remote && git prune-local; }; f"
         soft-reset = "!f() { git reset --soft $(git merge-base $(git branch --show-current) ${1:-main}); }; f"
+        soft-reset-stash = "!f() { git reset --soft $(git merge-base $(git branch --show-current) ${1:-main}) && git stash push -m 'WIP'; }; f"
         graph = "!f() { git log --oneline --graph --decorate; }; f"
         pullorigin = "!f() { git pull --rebase origin; }; f"
         authors = "!f() { git shortlog -e -s -n; }; f"
