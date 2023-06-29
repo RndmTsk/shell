@@ -31,9 +31,12 @@
         prune-remote = "!f() { git remote prune origin; }; f"
         prune-local = "!f() { \"${HOME}/bin/clear-local-branches.sh\"; }; f"
         fresh = "!f() { git checkout ${1:-main} && git pull && git prune-remote && git prune-local; }; f"
+        fresh-rebase = "!f() { BRANCH=$(git branch --show-current) && git fresh ${1:-main} && git checkout ${BRANCH} && git rebase ${1:-main}; }; f"
         soft-reset = "!f() { git reset --soft $(git merge-base $(git branch --show-current) ${1:-main}); }; f"
         soft-reset-stash = "!f() { git reset --soft $(git merge-base $(git branch --show-current) ${1:-main}) && git stash push -m 'WIP'; }; f"
         graph = "!f() { git log --oneline --graph --decorate; }; f"
         pullorigin = "!f() { git pull --rebase origin; }; f"
         authors = "!f() { git shortlog -e -s -n; }; f"
         smartlog = "!f() { git log --graph --pretty=format:'commit: %C(bold red)%h%Creset %C(red)<%H>%Creset %C(bold magenta)%d %Creset%ndate: %C(bold yellow)%cd %Creset%C(yellow)%cr%Creset%nauthor: %C(bold blue)%an%Creset %C(blue)<%ae>%Creset%n%C(cyan)%s%n%Creset'; }; f"
+[core]
+        ignorecase = false
