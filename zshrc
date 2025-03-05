@@ -7,6 +7,17 @@ function video_to_gif() {
   ffmpeg -v warning -i ${1} -i ${PALETTE} -lavfi "${FILTERS} [x]; [x][1:v] paletteuse" -y ${2:-output.gif}
 }
 
+# Add system zsh functions to fpath
+fpath=(/usr/share/zsh/5.9/functions $fpath)
+
+# Load completions
+autoload -Uz compinit
+compinit
+
+# Load bash compatibility
+autoload -Uz bashcompinit
+bashcompinit
+
 # Shell Configuration
 export EDITOR=vim
 export POWERLINE_BASH_CONTINUATION=1
@@ -97,3 +108,8 @@ if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.i
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
